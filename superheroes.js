@@ -504,10 +504,3 @@ alert(
 console.table(superheroes);
 
 /* write your code here */
-superheroes.forEach((hero) => {
-  const template = document.querySelector("template").content;
-  const copy = template.cloneNode(true);
-  copy.querySelector("h2").textContent = hero.name;
-  copy.querySelector("img").src = hero.img;
-  document.querySelector("main").appendChild(copy);
-});
