@@ -1,0 +1,5 @@
+hidden
+/hidden
+/hidden/*
+.vscode/settings.json
+.DS_Store
