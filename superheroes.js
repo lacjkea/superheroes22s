@@ -3,6 +3,7 @@ const superheroes = [
     name: "Roof watcher",
     powers: ["overthinking", "insomnia"],
     primaryNemesis: "day light",
+    img: "https://cdn.stocksnap.io/img-thumbs/960w/facing-seagull_JAKTSGL5FA.jpg",
     lifePercentage: 1,
     dob: {
       day: 14,
@@ -503,3 +504,10 @@ alert(
 console.table(superheroes);
 
 /* write your code here */
+superheroes.forEach((hero) => {
+  const template = document.querySelector("template").content;
+  const copy = template.cloneNode(true);
+  copy.querySelector("h2").textContent = hero.name;
+  copy.querySelector("img").src = hero.img;
+  document.querySelector("main").appendChild(copy);
+});
