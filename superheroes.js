@@ -29,7 +29,7 @@ const superheroes = [
     name: "Firelfy",
     powers: ["procrastinating", "perfectionism"],
     primaryNemesis: "Superwoman",
-    img: "file:///Users/cdianne/Documents/KEA%20education/2nd%20semester/digital%20user%20interfaces/superhero.png",
+    img: "https://cdn.stocksnap.io/img-thumbs/960w/facing-seagull_JAKTSGL5FA.jpg",
     lifePercentage: 75,
     dob: {
       day: 24,
@@ -317,7 +317,7 @@ const superheroes = [
       "can create chocolate at will",
     ],
     primaryNemesis: "Passive Patrick",
-    img: "https://static.wikia.nocookie.net/finalfantasy/images/1/1e/Louelle_from_WotV.png/revision/latest/scale-to-width-down/607?cb=20210405035234",
+    img: "https://static.wikia.nocookie.net/finalfantasy/images/1/1e/Louelle_from_WotV.png",
     lifePercentage: 100,
     dob: {
       day: 22,
@@ -498,16 +498,26 @@ const superheroes = [
   },
 ];
 
-alert(
-  "1. Checking if JS file is linked up correctly. \n2. Always open the inspector/console when woorking with the JS \n3. Write your code in the end of the js-file \n4. Don't use alert boxes for UI... \n5. Delete this message or comment it out"
-);
-console.table(superheroes);
+// alert(
+//   "1. Checking if JS file is linked up correctly. \n2. Always open the inspector/console when woorking with the JS \n3. Write your code in the end of the js-file \n4. Don't use alert boxes for UI... \n5. Delete this message or comment it out"
+// );
+// console.table(superheroes);
 
+//l 32 changed
 /* write your code here */
 superheroes.forEach((hero) => {
+  console.log(hero);
   const template = document.querySelector("template").content;
   const copy = template.cloneNode(true);
   copy.querySelector("h2").textContent = hero.name;
   copy.querySelector("img").src = hero.img;
+  if (hero.lifePercentage <= 1000) {
+    const divEl = copy.querySelector("div");
+    // divEl.style.width = `${hero.lifePercentage}%`;
+    divEl.style.width = hero.lifePercentage / 10 + "%";
+    if (hero.lifePercentage < 400) {
+      divEl.classList.add("low-life");
+    }
+  }
   document.querySelector("main").appendChild(copy);
 });

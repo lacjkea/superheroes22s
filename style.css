@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+article {
+  display: grid;
+}
+
+img:nth-child(3) {
+  /* background-color: blue; */
+  padding: 10px;
+  grid-area: -1 / -1;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem 1rem;
+}
+
+article:first-child {
+  grid-column: 1 / -1;
+}
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+div {
+  height: 1rem;
+  background-color: green;
+}
+
+.low-life {
+  background-color: red;
+}
+
+@media only screen and (min-width: 500px) {
+}
